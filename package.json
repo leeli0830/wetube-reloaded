@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leeli0830/wetube-reloaded.git"
+    "url": "git+https://github.com/leeli0830/wetube-reloaded"
   },
   "author": "Hwanyi Lee (Jacob Lee)",
   "license": "ISC",
