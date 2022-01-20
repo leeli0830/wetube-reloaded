@@ -7,7 +7,7 @@
     "url": "git+https://github.com/leeli0830/wetube-reloaded.git"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node index.js"
+    "dev": "nodemon --exec babel-node src/server.js"
   },
   "author": "Hwanyi Lee (Jacob Lee)",
   "license": "ISC",
