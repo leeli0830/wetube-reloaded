@@ -1,10 +1,10 @@
 import express from "express";
-import morgan from "morgan";
+import morgan from "morgan"; // Morgan is a tool for logging
 
 const PORT = 4000;
 
 const app = express(); // Create Express instance
-const logger = morgan("dev");
+const logger = morgan("dev"); // "dev" is one of the modes
 
 const handleHome = (req, res) => {
   res.send("<h1>Home Sweet Home</h1>");
