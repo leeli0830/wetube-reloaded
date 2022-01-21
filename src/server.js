@@ -1,21 +1,17 @@
 import express from "express";
+import morgan from "morgan";
 
 const PORT = 4000;
 
 const app = express(); // Create Express instance
-
-const gossipMiddleware = (req, res, next) => {
-  console.log(`Someone is going to ${req.url}`);
-  next();
-};
+const logger = morgan("dev");
 
 const handleHome = (req, res) => {
-  // First parameter is for request and Second parameter is for response
-  return res.end(); // Kill response
+  res.send("<h1>Home Sweet Home</h1>");
 };
 
-app.use(gossipMiddleware); // Every route uses this middleware
-app.get("/", gossipMiddleware, handleHome);
+app.use(logger);
+app.get("/", handleHome);
 
 const handleListening = () =>
   console.log(`Server listening on port: http://localhost:${PORT}`);
