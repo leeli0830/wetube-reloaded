@@ -1,16 +1,14 @@
 import express from "express";
 import morgan from "morgan"; // Morgan is a tool for logging
+import globalRouter from "./routers/globalRouter";
+import userRouter from "./routers/userRouter";
+import videoRouter from "./routers/videoRouter";
 
 const PORT = 4000;
 
 const app = express(); // Create Express instance
 const logger = morgan("dev"); // "dev" is one of the modes
 app.use(logger);
-
-// Create routers
-const globalRouter = express.Router();
-const userRouter = express.Router();
-const videoRouter = express.Router();
 
 // User routers
 app.use("/", globalRouter);
