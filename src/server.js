@@ -5,13 +5,17 @@ const PORT = 4000;
 
 const app = express(); // Create Express instance
 const logger = morgan("dev"); // "dev" is one of the modes
-
-const handleHome = (req, res) => {
-  res.send("<h1>Home Sweet Home</h1>");
-};
-
 app.use(logger);
-app.get("/", handleHome);
+
+// Create routers
+const globalRouter = express.Router();
+const userRouter = express.Router();
+const videoRouter = express.Router();
+
+// User routers
+app.use("/", globalRouter);
+app.use("/videos", videoRouter);
+app.use("/users", userRouter);
 
 const handleListening = () =>
   console.log(`Server listening on port: http://localhost:${PORT}`);
